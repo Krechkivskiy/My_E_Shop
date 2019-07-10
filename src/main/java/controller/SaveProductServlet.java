@@ -25,10 +25,8 @@ public class SaveProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
         Product product = new Product();
-        String name = request.getParameter("name");
-        product.setName(name);
-        String description = request.getParameter("description");
-        product.setDescription(description);
+        product.setName(request.getParameter("name"));
+        product.setDescription(request.getParameter("description"));
         String price = request.getParameter("price");
         try {
             double priceDouble = Double.parseDouble(price);

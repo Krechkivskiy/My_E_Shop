@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Map;
 
 @WebServlet("/register")
 public class RegisterUserServlet extends HttpServlet {
@@ -23,11 +22,11 @@ public class RegisterUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String repeatedPassword = request.getParameter("rpassword");
-        Map<Integer, User> allUsers = USER_SERVICE.getAllUsers();
         if (password.equals(repeatedPassword)) {
             USER_SERVICE.addUser(new User(email, password));
             request.getRequestDispatcher("Page_to_save.jsp").forward(request, response);
         } else {
+            request.setAttribute("email",email);
             request.getRequestDispatcher("Save.jsp").forward(request, response);
         }
     }

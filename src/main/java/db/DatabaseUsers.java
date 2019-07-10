@@ -30,7 +30,7 @@ public class DatabaseUsers {
         return USER_DATABASE.containsValue(user);
     }
 
-    public void change(User user) {
+    public void edit(User user) {
         USER_DATABASE.replace(user.getId(), user);
     }
 

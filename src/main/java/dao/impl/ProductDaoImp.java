@@ -26,8 +26,8 @@ public class ProductDaoImp implements ProductDAO {
     }
 
     @Override
-    public void change(Product product) {
-        productsDataBase.change(product);
+    public void edit(Product product) {
+        productsDataBase.edit(product);
     }
 
     @Override

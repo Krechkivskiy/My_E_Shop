@@ -22,7 +22,7 @@ public class ProductsDataBase {
         return PRODUCT_DATABASE;
     }
 
-    public void change(Product product) {
+    public void edit(Product product) {
         PRODUCT_DATABASE.replace(product.getId(), product);
     }
 

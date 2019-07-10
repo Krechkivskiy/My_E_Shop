@@ -31,8 +31,8 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void change(User user) {
-        databaseUsers.change(user);
+    public void edit(User user) {
+        databaseUsers.edit(user);
     }
 
 

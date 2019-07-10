@@ -30,8 +30,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void change(Product product) {
-        productDAO.change(product);
+    public void edit(Product product) {
+        productDAO.edit(product);
         LOGGER.debug("Product " + product + " changed ");
     }
 
