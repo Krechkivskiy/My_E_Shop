@@ -8,51 +8,43 @@ public class User {
     private String email;
     private String password;
     private String role;
-    private Box box;
-    private String verificationCode;
+    private int boxId;
+    private int orderId;
 
+
+    public int getBoxId() {
+        return boxId;
+    }
+
+    public void setBoxId(int boxId) {
+        this.boxId = boxId;
+    }
 
     public User(int id, String email, String password, String role) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.role = role;
-        box = new Box();
     }
 
     public User(String email, String password, String role) {
         this.email = email;
         this.password = password;
         this.role = role;
-        box = new Box();
     }
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
-        box = new Box();
     }
 
-    public void addProduct(Product product) {
-        box.add(product);
+    public int getOrderId() {
+        return orderId;
     }
 
-    public void clear() {
-        box.clear();
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
-
-    public String getVerificationCode() {
-        return verificationCode;
-    }
-
-    public int getBoxSize() {
-        return box.size();
-    }
-
-    public void setVerificationCode(String code) {
-        this.verificationCode = code;
-    }
-
 
     public int getId() {
         return id;
