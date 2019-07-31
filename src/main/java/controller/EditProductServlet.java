@@ -22,7 +22,8 @@ public class EditProductServlet extends HttpServlet {
 
         String id = request.getParameter("id");
         request.setAttribute("id", id);
-        request.getRequestDispatcher("/page_to_change_product.jsp").forward(request, response);
+        request.getRequestDispatcher("/page_to_change_product.jsp")
+                .forward(request, response);
     }
 
     @Override
@@ -39,8 +40,8 @@ public class EditProductServlet extends HttpServlet {
             double priceDouble = Double.parseDouble(price);
             product.setPrice(priceDouble);
         } catch (NumberFormatException nfe) {
-            request.setAttribute("priceError","Incorrect price  please try again");
-            request.getRequestDispatcher("/product.jsp").forward(request,response);
+            request.setAttribute("priceError", "Incorrect price  please try again");
+            request.getRequestDispatcher("/product.jsp").forward(request, response);
         }
         productService.edit(product);
         request.setAttribute("productDatabase", productService.getAll());
